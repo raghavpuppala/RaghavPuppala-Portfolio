@@ -24,6 +24,8 @@ export function FlightPlan() {
         const length = () => (wide ? route.current!.offsetWidth : route.current!.offsetHeight);
         const offset = (el: HTMLElement) => (wide ? el.offsetLeft : el.offsetTop);
         const light = () => {
+          // The ref is cleared when the section unmounts (dev remounts, HMR) while a tween is still ticking.
+          if (!jet.current) return;
           const reached = Number(gsap.getProperty(jet.current, axis));
           steps.forEach((step) => step.toggleAttribute("data-active", offset(step) <= reached + 1));
         };

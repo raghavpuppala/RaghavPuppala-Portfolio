@@ -308,6 +308,8 @@ function Signature({ children }: { children: string }) {
   return (
     <span className="relative inline-block whitespace-nowrap text-ink">
       <span className="font-serif text-[1.3em] leading-none tracking-[-0.01em] italic">{children}</span>
+      {/* No non-scaling-stroke: DrawSVG can't measure a stretched path with it. The line is near-horizontal and
+          the height scales 1:1, so its thickness doesn't change. */}
       <svg
         viewBox="0 0 200 12"
         preserveAspectRatio="none"
@@ -321,7 +323,6 @@ function Signature({ children }: { children: string }) {
           stroke="currentColor"
           strokeWidth={2}
           strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
         />
       </svg>
     </span>
