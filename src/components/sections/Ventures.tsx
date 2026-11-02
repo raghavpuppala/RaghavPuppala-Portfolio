@@ -39,6 +39,8 @@ const introClip =
 const shadowBeneath =
   "notch-corner-shadow pointer-events-none absolute right-0 z-1 hidden [--edge-shade:var(--edge-shade-own,var(--edge-shade-soft))] top-[calc(-1*var(--notch-lift))] [translate:0_var(--beneath-y,100lvh)] lg:motion-safe:block";
 
+const DRAW_SPEED = 2.5; // 1 = the original pace
+
 export function Ventures() {
   const root = useRef<HTMLElement>(null);
 
@@ -93,7 +95,8 @@ export function Ventures() {
 
       function animateArt(trigger: (panel: Element) => ScrollTrigger.Vars) {
         gsap.utils.toArray<HTMLElement>("[data-panel]").forEach((panel) => {
-          const tl = gsap.timeline({ scrollTrigger: trigger(panel) });
+          // timeScale sets the pace of the whole drawing (strokes, stagger and motto) at once.
+          const tl = gsap.timeline({ scrollTrigger: trigger(panel) }).timeScale(DRAW_SPEED);
           const strokes = gsap.utils.toArray<SVGPathElement>(panel.querySelectorAll("[data-draw]"));
           const motto = panel.querySelectorAll("[data-motto]");
           // data-duration / data-at override a stroke's timing. Hidden until drawn: a round cap shows as a dot.
