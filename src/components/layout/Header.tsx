@@ -7,6 +7,7 @@ import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 import { bandHandlers, bandOrigin } from "@/lib/band";
 import { scrollToSection } from "@/lib/navigate";
 import { Button } from "@/components/ui/Button";
+import { InvestLink } from "@/components/ui/InvestLink";
 import { JetIcon } from "@/components/ui/Jet";
 
 // Scrollspy line, just above mid-screen. Pinned sections are measured by their pin spacer.
@@ -480,6 +481,7 @@ function MobileMenu({
             {`Call ${site.contact.phones[0].display}`}
           </Button>
         </div>
+        <InvestLink tone="marigold" className="mt-6 text-paper" />
         <div className="mt-6 flex items-center justify-between gap-4 text-sm text-paper/70">
           <span>
             {site.contact.days.short} · {site.contact.hours}

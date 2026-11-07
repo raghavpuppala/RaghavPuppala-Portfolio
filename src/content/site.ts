@@ -38,7 +38,11 @@ export const site = {
     email: "hello@raghavpuppala.com",
     days: { short: "Mon - Fri", long: "Monday - Friday" },
     hours: "9 AM - 5 PM",
-    demat: "http://p.njw.bz/99909",
+    invest: {
+      label: "Start investing",
+      detail: "Open a Free Demat/MF account",
+      href: "https://eonboard.njindiaonline.com/partner-tiny-url?njBrcode=99909",
+    },
     booking: { label: "Book a free session", href: "https://calendly.com/raghavpuppala_financial_advisor/30min" },
   },
 

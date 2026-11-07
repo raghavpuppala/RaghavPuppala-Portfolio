@@ -88,6 +88,13 @@ export function Contact() {
                   </DetailLink>
                 </Links>
               </Row>
+              <Row via="Invest" when="Demat · MF">
+                <Links>
+                  <DetailLink href={site.contact.invest.href} external>
+                    Start investing
+                  </DetailLink>
+                </Links>
+              </Row>
               <Row via="Call" when={site.contact.days.short}>
                 <Links>
                   {site.contact.phones.map((p) => (

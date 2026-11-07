@@ -94,17 +94,22 @@ export function Practice() {
               <div
                 key={c.title}
                 data-lined
-                className="relative flex items-baseline justify-between gap-4 py-2.5 short:py-1.5"
+                className="relative flex flex-col gap-0.5 py-2.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 short:py-1.5"
               >
                 <span data-line aria-hidden className="absolute inset-x-0 bottom-0 h-px origin-left bg-line" />
                 <span className="font-display text-lg uppercase">{c.title}</span>
-                <span className="text-right text-sm text-ink-soft">{c.detail}</span>
+                <span className="text-sm text-ink-soft sm:text-right">{c.detail}</span>
               </div>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 short:mt-6">
-            <Button href={site.contact.demat} external variant="ink-on-paper">
-              Open a free Demat account
+            <Button
+              href={site.contact.invest.href}
+              external
+              variant="ink-on-paper"
+              shortLabel={site.contact.invest.label}
+            >
+              {`${site.contact.invest.label} · ${site.contact.invest.detail}`}
             </Button>
             <Button href={site.contact.booking.href} external variant="outline-on-paper">
               {site.contact.booking.label}

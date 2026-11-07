@@ -5,6 +5,7 @@ import { useId, useRef } from "react";
 import { site } from "@/content/site";
 import { gsap, MOTION_OK, MOTION_REDUCED, SplitText, useGSAP } from "@/lib/gsap";
 import { Button } from "@/components/ui/Button";
+import { InvestLink } from "@/components/ui/InvestLink";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Credentials } from "./Credentials";
 import { JET_PATH } from "@/components/ui/Jet";
@@ -265,6 +266,8 @@ export function Hero() {
               <WhatsAppButton message="Hi Raghav, I'd like to talk about my finances." variant="outline">
                 Message on WhatsApp
               </WhatsAppButton>
+              {/* Third, and quietest: for the visitor who has already decided. Wraps to its own line. */}
+              <InvestLink className="w-full short:text-xs" />
             </div>
           </div>
 
